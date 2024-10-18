@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Alfa | Rest Api</title>
+  <link rel="stylesheet" href="vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="shortcut icon" href="images/faces/face3.jpg" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body onload="getvisitor();">
+  <div class="row" id="proBanner">
+    <div class="col-12">
+      <span class="d-flex align-items-center purchase-popup">
+        <p>Eror ?, Chat My WhatsApp</p>
+        <a href="https://wa.me/6287715768324?text=Hallo%20Bang" target="_blank" class="btn download-button purchase-button ml-auto">Chat</a>
+        <i class="typcn typcn-delete-outline" id="bannerClose"></i>
+      </span>
+    </div>
+  </div>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
+
+        </div>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-2">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+              <i class="typcn typcn-message mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images/faces/face1.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal">Elaina bot
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Bagus bang rest api mu :v
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal">Kurumi bot
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Semangat ayang,<br/>kalau ada yg jual gk usah di lanjutin ❤️
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-normal"> Alfa
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Kalau Mau Req Chat<br/>+6287715768324
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-0">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="typcn typcn-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="typcn typcn-info mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="typcn typcn-cog-outline mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="typcn typcn-user mx-0"></i> 
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="typcn typcn-th-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close typcn typcn-times"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="typcn typcn-device-desktop menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+              <div class="badge badge-danger">new</div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#downloader-nya" aria-expanded="false" aria-controls="downloader-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Downloader</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="downloader-nya">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/fbdl?url=&apikey=fa">Facebook - Only Video</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/tiktok?url=&apikey=fa">Tiktok Hd</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/tiktok2?url=&apikey=fa">Tiktok Dl V2</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/tiktok3?url=https://www.tiktok.com/@satokizaki/video/7280851276986961159?_d=secCgYIASAHKAESPgo8H2m2c2Zt94OsGfyoSSamY5o0wxAkL%2BwFxRHyKlczhVxxvy6ZnejPMvPUDtG9V%2FZcgVxxxk46krF8mSDUGgA%3D&_r=1&checksum=1224a67e7b2acb8b8fe767763dcb3e02b1c196a7bfb78a1e8eba21d46b2445b5&sec_uid=MS4wLjABAAAAVc4LyjJc6TZhaCK-60NWItPYgOQgYUfv-buvRMjNuxNcjz29XD9xl6OP9eow5Fzf&sec_user_id=MS4wLjABAAAA2PSy5VA9g48heMNPylbEe0X5vsq0SR3pJkpqjUpkDTejR5aVKH7HEeLOUiZBuRkA&share_app_id=1340&share_author_id=7246669464325030917&share_link_id=3754b69f-dfca-4aff-b328-3d4c6df8cc6a&sharer_language=id&timestamp=1696322545&u_code=dlgc75jc4d9mj0&ugbiz_name=Account&user_id=7028434958628865030&utm_campaign=client_share&utm_source=copy&apikey=fa">Tiktok Dl V3/TikTok Slide</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/ighd?url=&apikey=fa">Instagram Dl - Only Video</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytplay?q=&apikey=fa">Youtube Play</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytplay2?q=&apikey=fa">Yt Play2</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytdl?url=&apikey=fa">Youtube Download</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#search-nya" aria-expanded="false" aria-controls="search-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Search</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="search-nya">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="api/search/unsplash">Unsplash</a></li>
+              <li class="nav-item"> <a class="nav-link" href="api/search/wallflare">Wall Flare</a></li>
+              <li class="nav-item"> <a class="nav-link" href="api/search/ytsearch?q=preset anime&apikey=fa">Youtube Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="api/search/xnxx?q=Milf&apikey=fa">Xnxx Search</a></li>
+                 <li class="nav-item"><a class="nav-link" href="api/downloader/xnxxdl?url=&apikey=fa">Xnxx Download</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#islamic-nya" aria-expanded="false" aria-controls="islamic-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Ai</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="islamic-nya">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="api/ai/gpt?text=Siapa itu Nicola Tesla&apikey=fa">Chat Gpt</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/txt2img?text=cat in space, hd, 4k&apikey=fa">Text To Image</a></li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#textpro-nya" aria-expanded="false" aria-controls="textpro-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Anime</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="textpro-nya">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="api/anime/ongoing?apikey=fa">Wibu Desu</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/anime/otaku?text=kage no&apikey=fa">Otaku Search</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/anime/wibudesu?text=kage no&apikey=fa">Wibu Desu</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/anime/wibudl?text=https://wibudesu.co/shadow-garden-sub-indo/&apikey=fa">Wibu Desu Download</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/anime/mynimeku?text=kage no&apikey=fa">Mynime Search</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/anime/mynimedl?url=&apikey=fa">Mynime Dl</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#maker-nya" aria-expanded="false" aria-controls="maker-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Random</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="maker-nya">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="api/random/hentai?apikey=fa">Random Hentai</a></li>
+              <li class="nav-item"> <a class="nav-link" href="api/random/bokep?apikey=fa">Bokep</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/random/katajawa?apikey=fa">Kata Jawa</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#maker-nya" aria-expanded="false" aria-controls="maker-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Tools</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="maker-nya">
+              <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="api/tools/ssweb?url=https://google.com&apikey=fa">Ssweb</a></li>
+       <li class="nav-item"> <a class="nav-link" href="api/tools/stalktt?user=apikey=fa">Stalk TikTok</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/tools/stalkig?apikey=fa">Stalk Ig</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#photooxy-nya" aria-expanded="false" aria-controls="photooxy-nya">
+              <i class="typcn menu-icon"></i>
+              <span class="menu-title">Photooxy</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="photooxy-nya">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/dark-metal?text=Alfa&apikey=fa">Dark Metal</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/white-stone?text=Alfa&apikey=fa">White Stone</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/shadow?text=Alfa&apikey=fa">Shadow</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/white-cube?text=Alfa&apikey=fa">White Cube</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/gradient?text=Alfa&apikey=fa">Gradient</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/fur-text?text=Alfa&apikey=fa">Fur Text</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/flaming?text=Alfa&apikey=fa">Flaming</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/scary-cemetery?text=Alfa&apikey=fa">Scary Cemetery</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/harry-potter?text=Alfa&apikey=fa">Harry Potter</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/3d-wood?text=Alfa&apikey=fa">3d Wood</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/illuminated-metallic?text=Alfa&apikey=fa">Illuminated Metallic</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/put-your?text=Alfa&apikey=fa">Put Your</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/photooxy/8-bit?text1=turu&text2=sek&apikey=fa">8 Bit</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+         
+
+          <div class="row">
+          <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Status Creator</p>
+                      <h6 class="mb-0">Nama: Alfa<br/>Hobi: Coding<br/>Status: Jomblo (Gak Minat Pacaran :v)<br/>Whatsapp: <a href="https://wa.me/6287715768324?text=Hai Bang 😁">087715768324<br/><br/>Notes: Mimpi akan jadi kenyataan jika kita punya keberanian</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Ip Address</p>
+                      <h6 class="mb-0" id="ip">00</h6>
+                    </div>
+                    <i class="typcn typcn-wi-fi icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Date</p>
+                      <h6 class="mb-0" id="tanggal">00</h6>
+                    </div>
+                    <i class="typcn typcn-calendar-outline icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Time & Ucapan</p>
+                      <h6 class="mb-0" id="Clock">Loading...</h6>
+                      <h6 class="mb-0" id="Ucapan">Loading...</h6>
+                    </div>
+                    <i class="typcn typcn-time icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Battery</p>
+                      <h6 class="mb-0" id="percentageLevel">Loading...</h6>
+                      <h6 class="mb-0" id="batteryLevel"></h6>
+                    </div>
+                    <i class="typcn typcn-battery-charge icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://instagram.com/Alfa_/" class="text-muted" target="_blank">Alfa</a></span>
+                    </div>
+                </div>    
+            </div>        
+        </footer>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- base:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/000.js"></script>
+  <script src="js/001.js"></script>
+  <script src="js/002.js"></script>
+  <script src="js/003.js"></script>
+  <script src="js/004.js"></script>
+  <script src="js/005.js"></script>
+</body>
+
+</html>
+
